@@ -12,11 +12,8 @@ const image = require('./controllers/image');
 const db = knex({
   client: 'pg',
   connection: {
-    host : 'dpg-cg9h529mbg54mbf1o6jg-a.frankfurt-postgres.render.com',
-    user : 'postgresql_e2xo_user',
-    port: 5432,
-    password : '6dw8uxjGOUvD7A28i5PnCJRyiJY3tMUf',
-    database : 'postgresql_e2xo'
+    connectionString : process.env.DATABASE_URL,
+    ssl: true,
   }
 });
 
